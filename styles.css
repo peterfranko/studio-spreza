@@ -596,11 +596,12 @@ button:focus-visible {
 }
 
 .scroll-cue {
-  position: absolute;
+  position: fixed;
   left: 50%;
   right: auto;
-  bottom: -0.25rem;
+  bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.85rem));
   transform: translateX(-50%);
+  z-index: 30;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -612,6 +613,7 @@ button:focus-visible {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: color 0.2s;
+  pointer-events: auto;
 }
 
 .scroll-cue:hover {
@@ -639,12 +641,6 @@ button:focus-visible {
     transform: scaleY(1);
     opacity: 0;
     transform-origin: top;
-  }
-}
-
-@media (max-width: 768px) {
-  .scroll-cue {
-    display: none;
   }
 }
 
