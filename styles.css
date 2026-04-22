@@ -1021,6 +1021,49 @@ button:focus-visible {
   margin-inline: auto;
 }
 
+@media (min-width: 900px) {
+  .work-bento--tri {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+.work-tile--app {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.15rem, 2.5vw, 1.5rem);
+  padding: clamp(1.25rem, 2.5vw, 1.65rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-inset), var(--shadow-sm);
+}
+
+.work-tile--app .work-visual {
+  min-height: 13rem;
+}
+
+@media (hover: hover) {
+  .work-tile--app:hover {
+    border-color: color-mix(in srgb, var(--accent-mid) 22%, var(--line-strong));
+    box-shadow: var(--shadow-inset), var(--shadow-md);
+  }
+}
+
+.work-tile--app .work-tile-copy h3 {
+  margin-top: 0;
+}
+
+.work-subtitle {
+  margin: 0 0 0.65rem !important;
+  font-family: var(--font-chapter);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
 .work-tile--lead,
 .work-tile--wide {
   display: flex;
@@ -1098,6 +1141,110 @@ button:focus-visible {
   background:
     linear-gradient(90deg, rgba(30, 61, 50, 0.15), transparent 50%),
     linear-gradient(180deg, #ebe6dc, #d8d0c3);
+}
+
+.work-visual--kiwido {
+  background:
+    linear-gradient(145deg, rgba(46, 91, 74, 0.2), transparent 50%),
+    linear-gradient(180deg, #e4ebe6, #c9d5ce);
+}
+
+.work-visual-calendar {
+  position: absolute;
+  inset: 22% 14% 18%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.35rem;
+}
+
+.work-visual-calendar span {
+  border-radius: 3px;
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  box-shadow: 0 2px 8px rgba(18, 17, 15, 0.06);
+}
+
+.work-visual-calendar span:nth-child(5),
+.work-visual-calendar span:nth-child(6) {
+  background: color-mix(in srgb, var(--accent-mid) 28%, rgba(255, 253, 248, 0.85));
+  border-color: color-mix(in srgb, var(--accent-mid) 35%, var(--line));
+}
+
+.work-visual--breadfare {
+  background:
+    linear-gradient(160deg, rgba(120, 72, 28, 0.12), transparent 42%),
+    linear-gradient(200deg, #f2e6d4 0%, #e8d4bc 45%, #dcc4a8 100%);
+}
+
+.work-visual-chart {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 18%;
+  height: 38%;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(255, 253, 248, 0.55) 55%
+  );
+  border: 1px solid rgba(18, 17, 15, 0.12);
+  box-shadow: 0 10px 28px rgba(18, 17, 15, 0.08);
+}
+
+.work-visual-chart::before {
+  content: "";
+  position: absolute;
+  inset: 16% 9% 24%;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent-mid) 14%, rgba(255, 253, 248, 0.5));
+  clip-path: polygon(0 100%, 0 58%, 22% 72%, 48% 38%, 71% 52%, 100% 22%, 100% 100%);
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--accent-mid) 55%, #6b5340);
+}
+
+.work-visual--upkeeper {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.45), transparent 42%),
+    linear-gradient(185deg, #eae8e2, #d6d2c8);
+}
+
+.work-visual-tick {
+  position: absolute;
+  width: 3.25rem;
+  height: 3.25rem;
+  left: 50%;
+  top: 52%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--ink) 22%, var(--line));
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: 0 10px 24px rgba(18, 17, 15, 0.1);
+}
+
+.work-visual-tick::before,
+.work-visual-tick::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--ink-soft);
+  border-radius: 1px;
+  transform-origin: 50% 100%;
+}
+
+.work-visual-tick::before {
+  width: 2px;
+  height: 28%;
+  translate: -50% -100%;
+  transform: rotate(-52deg);
+}
+
+.work-visual-tick::after {
+  width: 2px;
+  height: 36%;
+  translate: -50% -100%;
+  transform: rotate(38deg);
 }
 
 .work-panels {
