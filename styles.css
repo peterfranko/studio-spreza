@@ -746,6 +746,15 @@
     scroll-snap-align: start;
   }
 
+  /* At phone widths, 88vw makes the 1206:2622 frames almost a full viewport
+     tall. Scale them to 75% of their former width while preserving the source
+     aspect ratio, so a complete screen is comfortably visible on an iPhone. */
+  @media (max-width: 819px) {
+    .work-showcase-item {
+      inline-size: min(18rem, 66vw);
+    }
+  }
+
   .work-showcase-item:first-child {
     margin-inline-start: var(--gallery-edge-inset);
   }
