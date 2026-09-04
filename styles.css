@@ -263,9 +263,12 @@
     --z-menu: 20;
     --z-skip: 100;
 
-    /* App icons: 144px transparent exports from the shared appicon masters */
+    /* App icons: 144px transparent exports from the shared appicon masters.
+       Damson ships one universal mark rather than a light/dark pair: it has a
+       single master, so both schemes point at the same file. */
     --app-icon-kiwido: url('assets/kiwido-icon-light.png');
     --app-icon-upkeeper: url('assets/upkeeper-icon-light.png');
+    --app-icon-damson: url('assets/damson-icon.png');
 
     color-scheme: light;
   }
@@ -282,6 +285,7 @@
     --color-focus-ring: rgba(201, 188, 168, 0.7);
     --app-icon-kiwido: url('assets/kiwido-icon-dark.png');
     --app-icon-upkeeper: url('assets/upkeeper-icon-dark.png');
+    --app-icon-damson: url('assets/damson-icon.png');
     color-scheme: dark;
   }
 
@@ -298,6 +302,7 @@
       --color-focus-ring: rgba(201, 188, 168, 0.7);
       --app-icon-kiwido: url('assets/kiwido-icon-dark.png');
       --app-icon-upkeeper: url('assets/upkeeper-icon-dark.png');
+      --app-icon-damson: url('assets/damson-icon.png');
       color-scheme: dark;
     }
   }
@@ -845,6 +850,10 @@
 
   .work-icon[data-app='upkeeper'] {
     background-image: var(--app-icon-upkeeper);
+  }
+
+  .work-icon[data-app='damson'] {
+    background-image: var(--app-icon-damson);
   }
 
   .work-row-body {
